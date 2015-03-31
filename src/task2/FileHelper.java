@@ -26,21 +26,28 @@ public class FileHelper {
 
   /**
    * Reads from console while the enter is single ".".
+   * @return a The StringBuilder that we want to write in the file.
    * @throws IOException If there is a problem when we try to read next line.
    */
-  public void readFromConsole() throws IOException {
-    String a;
+  private String readFromConsole() throws IOException {
+    StringBuilder a=new StringBuilder();
+    String b;
     do {
-      a = sc.nextLine();
-      // System.out.println(a);
-      if (a.compareTo(".") != 0) {
-        out.write(a);
-        out.write("\n");
-        // out.close();
-      } else {
-        break;
-      }
-    } while (a.compareTo(".") != 0);
+      b=sc.nextLine();
+    if (b.compareTo(".") != 0){
+      a.append(b).append("\n");
+    }      // System.out.println(a);
+    } while (b.compareTo(".") != 0);
+     return a.toString();
+  }
+
+  /**
+   *
+   * @throws IOException
+   */
+  public void writeToFile() throws IOException {
+   String a=readFromConsole();
+   out.write(a);
     out.close();
   }
 }

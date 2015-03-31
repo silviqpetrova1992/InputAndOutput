@@ -20,7 +20,6 @@ public class Directory {
    */
   public void list(String a) throws IOException {
     Path dir = Paths.get(a);
-    //if (dir.getFileName().toString().matches("/w*[.]{1}/w*")) {
     if (!Files.isDirectory(dir)) {
       System.out.println("Tova e Fail");
     } else {
@@ -29,7 +28,7 @@ public class Directory {
         if (Files.isDirectory(file)) {
           System.out.printf("%-70s -----This is a Directory-----\n", file.toAbsolutePath());
         } else {
-          System.out.printf("%-70s  -----This is a FileHelper-----\n", file.toAbsolutePath());
+          System.out.printf("%-70s  -----This is a File-----\n", file.toAbsolutePath());
         }
       }
     }
@@ -54,7 +53,7 @@ public class Directory {
       if (at.isDirectory()) {
         System.out.printf("%-70s Directory!\n", at.getAbsolutePath());
       } else {
-        System.out.printf("%-70s FileHelper!\n", at.getAbsolutePath());
+        System.out.printf("%-70s File!\n", at.getAbsolutePath());
       }
     }
   }

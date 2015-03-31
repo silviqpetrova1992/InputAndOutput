@@ -9,6 +9,7 @@ public class Cat implements Serializable {
   private String name;
   private int age;
   private double weight;
+  private  String color;
 
   public Cat(String name, int age, double weight) {
     this.name = name;

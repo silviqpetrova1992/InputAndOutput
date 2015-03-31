@@ -9,9 +9,12 @@ public class FileDemo {
   public static void main(String[] args) {
     try {
       FileHelper file=new FileHelper("a.txt");
-      file.readFromConsole();
+      file.writeToFile();
     } catch (IOException e) {
-      e.printStackTrace();
+      System.err.println(e.getMessage());
+    }
+    catch(NullPointerException e){
+      System.err.println("The file can't be NULL!");
     }
   }
 }

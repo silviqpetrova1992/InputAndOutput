@@ -8,14 +8,14 @@ import java.util.InputMismatchException;
 /**
  * Created by Silvia Petrova(silviqpetrova1992@gmail.com)on 3/24/15.
  */
-public class ConsoleReading {
+public class ConsoleReader {
 
 
   /**
    * Read String from the input stream
    *
    * @return String
-   * @throws IOException If the reading is unsuccessfully.
+   * @throws java.io.IOException If the reading is unsuccessfully.
    */
   public String readString() throws IOException {
     return this.read();
@@ -25,7 +25,7 @@ public class ConsoleReading {
    * Read int from the input stream
    *
    * @return int
-   * @throws IOException           If there is a problem with the reading.
+   * @throws java.io.IOException           If there is a problem with the reading.
    * @throws NumberFormatException If is not entered an integer number.
    */
   public int readInt() throws IOException, NumberFormatException {
@@ -38,8 +38,8 @@ public class ConsoleReading {
    * Read char from the input stream.
    *
    * @return char
-   * @throws IOException            If there is a problem with the reading.
-   * @throws InputMismatchException If is not entered an integer number.
+   * @throws java.io.IOException            If there is a problem with the reading.
+   * @throws java.util.InputMismatchException If is not entered an integer number.
    */
   public char readChar() throws IOException, InputMismatchException {
     String s = this.read();
@@ -55,7 +55,7 @@ public class ConsoleReading {
    * Read float number from the input stream.
    *
    * @return The float number.
-   * @throws IOException           If there is a problem with the reading.
+   * @throws java.io.IOException           If there is a problem with the reading.
    * @throws NumberFormatException If is not entered an integer number.
    */
   public float readFloat() throws IOException, NumberFormatException {
@@ -67,7 +67,7 @@ public class ConsoleReading {
    * This method allow us to read byte after byte while the enter is " ".
    *
    * @return String with all read characters.
-   * @throws IOException Ifthe reading is unsuccessfully.
+   * @throws java.io.IOException Ifthe reading is unsuccessfully.
    */
   private String read() throws IOException {
     StringBuilder s = new StringBuilder();

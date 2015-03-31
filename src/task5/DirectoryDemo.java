@@ -9,7 +9,7 @@ public class DirectoryDemo {
   public static void main(String[] args) {
     Directory d = new Directory();
     try {
-      d.list("/home/clouway");
+      d.listWithIOFile("/home/clouway");
     } catch (IOException x) {
       System.err.println("This  Directory doesn't exist! " + x.getMessage());
     } catch (NullPointerException e) {

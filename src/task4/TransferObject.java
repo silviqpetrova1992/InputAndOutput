@@ -19,25 +19,22 @@ public class TransferObject {
    * @throws IOException If there is a problem with the streams.
    */
   public int transfer(InputStream in, OutputStream out, int numberOfBytes, int offset) throws IOException {
-    if (in.available() < offset) {
+    if (numberOfBytes < -1 || offset < 0) {
+      throw new IOException("You can't put negative numbers!");
+    }
+    if (in.available() < offset || in.available() < numberOfBytes) {
       throw new IOException("The file is not big enought!");
     }
-    for (int i = 0; i < offset; i++) {
-      int c = in.read();
-      System.out.println(in.read());
-      // in.read();
+    if (numberOfBytes == -1) {
+      numberOfBytes = in.available()-offset;
+     // offset = 0;
     }
+      in.skip(offset);
     int br = 0;
     for (int i = 0; i < numberOfBytes; i++, br++) {
       int c = in.read();
-      if (c == -1) {
-        throw new IOException("The file is not big enought!");
-      }
       out.write(c);
-      //   out.write(in.read());
     }
-    out.close();
-    in.close();
     return br;
   }
 }
